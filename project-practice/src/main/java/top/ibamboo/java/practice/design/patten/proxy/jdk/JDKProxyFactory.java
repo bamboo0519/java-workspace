@@ -1,4 +1,4 @@
-package top.ibamboo.java.practice.proxy.jdk;
+package top.ibamboo.java.practice.design.patten.proxy.jdk;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -14,8 +14,8 @@ public abstract class JDKProxyFactory {
         this.target=target;
     }
 
-    abstract public Object proxyPreHandle(Object... args);
-    abstract public Object proxyPostHandle(Object... args);
+    public abstract Object proxyPreHandle(Object... args);
+    public abstract Object proxyPostHandle(Object... args);
 
     //给目标对象生成代理对象
     public Object getProxyInstance(){

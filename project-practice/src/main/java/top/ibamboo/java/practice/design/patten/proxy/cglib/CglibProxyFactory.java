@@ -1,4 +1,4 @@
-package top.ibamboo.java.practice.proxy.cglib;
+package top.ibamboo.java.practice.design.patten.proxy.cglib;
 
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
@@ -12,6 +12,8 @@ import java.lang.reflect.Method;
 public class CglibProxyFactory implements MethodInterceptor {
     //维护目标对象
     private Object target;
+
+    private IProxyHandler iProxyHandler = new IProxyHandler() {};
 
     public CglibProxyFactory(Object target) {
         this.target = target;
@@ -29,16 +31,23 @@ public class CglibProxyFactory implements MethodInterceptor {
         return en.create();
 
     }
-
     @Override
     public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
-        System.out.println("开始事务...");
+        iProxyHandler.proxyPreHandle(args);
 
         //执行目标对象的方法
         Object returnValue = method.invoke(target, args);
 
-        System.out.println("提交事务...");
+        iProxyHandler.proxyPostHandle(returnValue,args);
 
         return returnValue;
+    }
+
+    public CglibProxyFactory withProxyHandler(IProxyHandler iProxyHandler) {
+        if(iProxyHandler != null) {
+            this.iProxyHandler = iProxyHandler;
+        }
+
+        return this;
     }
 }
