@@ -1,8 +1,8 @@
-package top.ibamboo.java.practice.design.patten.proxy.jdk;
+package top.ibamboo.practice.design.patten.proxy.jdk;
 
 import org.junit.Test;
-import top.ibamboo.java.practice.design.patten.proxy.IUserDao;
-import top.ibamboo.java.practice.design.patten.proxy.UserDao;
+import top.ibamboo.practice.design.patten.proxy.IUserDao;
+import top.ibamboo.practice.design.patten.proxy.UserDao;
 
 /**
  * Created by C0907 on 2017/8/15.

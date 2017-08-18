@@ -1,4 +1,4 @@
-package top.ibamboo.java.practice.design.patten.proxy.cglib;
+package top.ibamboo.practice.design.patten.proxy.cglib;
 
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
