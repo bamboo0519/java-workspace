@@ -1,4 +1,4 @@
-package top.ibamboo.practice.design.patten.annotation.autowired;
+package top.ibamboo.practice.annotation.autowired;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -14,7 +14,7 @@ import java.util.Date;
  */
 @EnableScheduling
 @SpringBootApplication()
-@ComponentScan(basePackages = {"top.ibamboo.practice.design.patten.annotation.autowired"})
+@ComponentScan(basePackages = {"top.ibamboo.practice.annotation.autowired"})
 public class TestApplication {
     @Autowired
     Account account;

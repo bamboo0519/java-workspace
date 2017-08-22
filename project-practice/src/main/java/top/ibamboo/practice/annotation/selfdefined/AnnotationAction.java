@@ -1,4 +1,4 @@
-package top.ibamboo.practice.design.patten.annotation.selfdefined;
+package top.ibamboo.practice.annotation.selfdefined;
 
 /**
  * Created by C0907 on 2017/8/11.

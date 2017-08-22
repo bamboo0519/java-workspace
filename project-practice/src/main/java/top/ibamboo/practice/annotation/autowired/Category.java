@@ -1,4 +1,4 @@
-package top.ibamboo.practice.design.patten.annotation.autowired;
+package top.ibamboo.practice.annotation.autowired;
 
 import org.springframework.stereotype.Component;
 
@@ -7,5 +7,5 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class Role {
+public class Category {
 }

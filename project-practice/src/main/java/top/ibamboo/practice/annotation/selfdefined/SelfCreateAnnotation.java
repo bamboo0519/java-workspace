@@ -1,4 +1,4 @@
-package top.ibamboo.practice.design.patten.annotation.selfdefined;
+package top.ibamboo.practice.annotation.selfdefined;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
