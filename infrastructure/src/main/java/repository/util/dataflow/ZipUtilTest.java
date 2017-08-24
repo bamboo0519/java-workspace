@@ -1,4 +1,4 @@
-package repository.dataflow.util;
+package repository.util.dataflow;
 
 /**
  * Created by C0907 on 2017/8/17.

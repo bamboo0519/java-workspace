@@ -29,12 +29,15 @@ public class TestApplication {
         System.out.println("test~~" + beanEntity+ "  "+ beanEntity.getDefaultName());
 
         Map<String, Naming> map =  (Map<String, Naming>)ApplicationContextHandle.getBean(Naming.class);
-
         for(String key : map.keySet()){
             System.out.println("test1~~" + map.get(key)+ " "+key+":  "+map.get(key).naming("123"));
         }
 
-
         System.out.println("test~~" + new TestApplication().getAbcdBeanEntity());
+
+        for(String name : ApplicationContextHandle.getApplicationContext().getBeanDefinitionNames()){
+            System.out.println("getBeanDefinitionNames: "+name);
+            System.out.println("    Bean class: "+ ApplicationContextHandle.getBean(name).getClass());
+        }
     }
 }

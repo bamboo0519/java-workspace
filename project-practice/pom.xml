@@ -44,6 +44,15 @@
             <version>4.3.10.RELEASE</version>
         </dependency>
 
+
+        <!--h2 数据库测试-->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.196</version>
+            <!--<scope>test</scope>-->
+        </dependency>
+
         <!--用户top.ibamboo.practice.redis 测试redis功能-->
         <dependency>
             <groupId>redis.clients</groupId>

@@ -1,4 +1,4 @@
-package top.ibamboo.practice.listbean;
+package top.ibamboo.practice.structure.base;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
@@ -35,6 +35,7 @@ public class ApplicationContextHandle implements ApplicationContextAware {
         return applicationContext;
     }
 
+
     /**
      * 从静态变量ApplicationContext中取得Bean, 自动转型为所赋值对象的类型.
      *
@@ -49,6 +50,8 @@ public class ApplicationContextHandle implements ApplicationContextAware {
     private static void checkApplicationContext() {
         if (applicationContext == null) {
             throw new IllegalStateException("applicaitonContext未注入");
+        } else {
+            System.out.println("----{}"+applicationContext);
         }
     }
 }

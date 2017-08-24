@@ -12,6 +12,7 @@
     <groupId>com.cyler.bamboo</groupId>
     <artifactId>spring-cloud</artifactId>
 
+
 <dependencies>
     <dependency>
         <groupId>org.springframework</groupId>
@@ -43,7 +44,6 @@
         <artifactId>spring-test</artifactId>
         <version>4.3.2.RELEASE</version>
     </dependency>
-
 
 
     <dependency>

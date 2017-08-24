@@ -1,4 +1,4 @@
-package repository.dataflow.util;
+package repository.util.dataflow;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
