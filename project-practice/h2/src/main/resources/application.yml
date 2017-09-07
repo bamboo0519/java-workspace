@@ -1,0 +1,30 @@
+
+spring:
+  profiles:
+    active: local
+---
+spring:
+  profiles: local
+
+server:
+  port: 8051
+
+mybatis:
+  type-aliases-package: top.ibamboo.account.model
+  driver-class-name: org.h2.Driver
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  data-source-name: defaultUserDataSourceName
+  transaction-manager-name: defaultUserDataSourceTransactionManager
+  sql-session-template-name: defaultUserSqlSessionTemplate
+  sql-session-factory-name: defaultUserSqlSessionFactory
+  url: "jdbc:h2:mem:testdb;MODE=MYSQL;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'classpath:db/shiro_test.sql'"
+
+
+logging:
+  level: DEBUG
+
+
+password:
+  salt: $2a$16$vbMr@Ax/k*LTX&B%B-U^YUsMS.Pe
+  encryption: Sha256
+

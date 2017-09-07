@@ -1,5 +1,3 @@
-package top.ibamboo.practice.h2;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,6 +5,8 @@ import java.sql.Statement;
 
 /**
  * Created by C0907 on 2017/8/23.
+ *
+ * 该case，需要在本地启动h2服务器
  */
 public class H2MemoryModeTest {
 

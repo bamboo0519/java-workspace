@@ -20,7 +20,7 @@ public class EasyExtendStructure{
             };
         }
 
-        car.setSpeed(30);
+        car.speed= 30;
 
         String res = face.handle("red");
         if("add".equals(res)){
