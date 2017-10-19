@@ -3,10 +3,8 @@ package top.ibamboo.user.C.autoconfig;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.cache.CacheManager;
-import org.apache.shiro.mgt.RememberMeManager;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
-import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.AbstractShiroFilter;
@@ -16,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
 import top.ibamboo.user.C.beans.JedisCacheManager;
 import top.ibamboo.user.C.filter.LoginFilter;
+import top.ibamboo.user.C.filter.PermissionCheckFilter;
 import top.ibamboo.user.C.realm.ShiroRealm;
 
 import javax.servlet.Filter;
@@ -63,17 +62,23 @@ public class ShiroAutoConfiguration {
 //        return sessionManager;
 //    }
     @Bean
+    public ShiroRealm shiroRealm(){
+        ShiroRealm shiroRealm = new ShiroRealm();
+        return shiroRealm;
+    }
+
+    @Bean
     @Autowired (required = false)
-    public SecurityManager securityManager(List<Realm> realms,
-                                           SessionManager sessionManager,
+    public SecurityManager securityManager(List<Realm> realms
+                                           /*SessionManager sessionManager,
                                            CacheManager cacheManager,
-                                           RememberMeManager rememberMeManager){
+                                           RememberMeManager rememberMeManager*/){
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealms(realms);
-        securityManager.setSessionManager(sessionManager);
-        securityManager.setCacheManager(cacheManager);
+//        securityManager.setSessionManager(sessionManager);
+//        securityManager.setCacheManager(cacheManager);
 
-        securityManager.setRememberMeManager(rememberMeManager);
+//        securityManager.setRememberMeManager(rememberMeManager);
         SecurityUtils.setSecurityManager(securityManager);
 
         return securityManager;
@@ -83,28 +88,27 @@ public class ShiroAutoConfiguration {
     @Autowired(required = false)
     public Filter shiroFilter(SecurityManager securityManager,
                               UaaProperties properties,
-                              LoginFilter loginFilter) throws Exception {
+                              LoginFilter loginFilter,
+                              PermissionCheckFilter permissionCheckFilter) throws Exception {
         ShiroFilterFactoryBean filterFactoryBean = new ShiroFilterFactoryBean();
         filterFactoryBean.setSecurityManager(securityManager);
         filterFactoryBean.setLoginUrl(null);
         filterFactoryBean.setSuccessUrl("/");
         Map<String, Filter> filters = new HashMap<>();
         filters.put("loginFilter", loginFilter);
+        filters.put("permissionCheckFilter", permissionCheckFilter);
         filterFactoryBean.setFilters(filters);
 
         Map<String, String> map = new HashMap<>();
         map.put("/login", "loginFilter");
-        map.put("/**", "anon");
+        map.put("/public/**", "anon");
+        map.put("/protect/**", "permissionCheckFilter");
         filterFactoryBean.setFilterChainDefinitionMap(map);
 
         return (AbstractShiroFilter)filterFactoryBean.getObject();
     }
 
-    @Bean
-    public ShiroRealm shiroRealm(){
-        ShiroRealm shiroRealm = new ShiroRealm();
-        return shiroRealm;
-    }
+
 
 
 

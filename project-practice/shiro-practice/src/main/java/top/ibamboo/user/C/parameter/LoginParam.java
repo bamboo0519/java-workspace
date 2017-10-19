@@ -1,4 +1,4 @@
-package top.ibamboo.user.C.model;
+package top.ibamboo.user.C.parameter;
 
 import lombok.Data;
 

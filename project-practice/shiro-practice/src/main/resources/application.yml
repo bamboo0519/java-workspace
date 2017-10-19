@@ -4,9 +4,13 @@ spring:
 ---
 spring:
   profiles: local
-
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/templates/
 server:
   port: 8050
+
 
 
 uaa:

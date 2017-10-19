@@ -32,8 +32,8 @@ import java.util.Arrays;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = UaaApplication.class)
 public class NonConfigurationCreateTest {
-    @Autowired
-    ShiroRealm shiroRealm;
+    @Autowired (required = false)
+    ShiroRealm shiroRealm=null;
     @Autowired
     UaaProperties uaaProperties;
 
