@@ -87,7 +87,6 @@ public class ShiroAutoConfiguration {
     @Bean
     @Autowired(required = false)
     public Filter shiroFilter(SecurityManager securityManager,
-                              UaaProperties properties,
                               LoginFilter loginFilter,
                               PermissionCheckFilter permissionCheckFilter) throws Exception {
         ShiroFilterFactoryBean filterFactoryBean = new ShiroFilterFactoryBean();

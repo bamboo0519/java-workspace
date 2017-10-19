@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UaaApplication {
     @RequestMapping({"/"})
     public String  home() {
-        System.out.print("here~~");
+        System.out.print("UaaApplication~~");
 
         return "login/login";
     }
