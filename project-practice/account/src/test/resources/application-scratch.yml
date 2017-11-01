@@ -1,0 +1,56 @@
+mybatis:
+  type-aliases-package: com.dtdream.gamma.account.dto,com.dtdream.gamma.account.model
+  driver-class-name: org.h2.Driver
+  mapper-locations: classpath*:/mapper/user/*Mapper.xml
+  data-source-name: defaultUserDataSourceName
+  transaction-manager-name: defaultUserDataSourceTransactionManager
+  sql-session-template-name: defaultUserSqlSessionTemplate
+  sql-session-factory-name: defaultUserSqlSessionFactory
+  #RUNSCRIPT FROM 'classpath:db/gamma_basic_user.sql' \\;RUNSCRIPT FROM 'classpath:db/gamma_privilege.sql' \\;
+  url: "jdbc:h2:mem:testdb;MODE=MYSQL;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'classpath:db/gamma_account.sql'"
+global:
+  notify:
+    nameServer: sample
+  env:
+    label: "localtest"
+  nameServer:
+    addr: ${local.mqserver.namesrvAddr:192.168.103.135:9876}
+  domain:
+    user: "127.0.0.1:8002"
+
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 7000
+tag:
+  business-properties:
+    user:
+      max-creat-count: 10
+      max-ref-count: 10
+    org:
+      max-creat-count: 10
+      max-ref-count: 10
+
+message:
+  async:
+    name-server: 120.27.198.179:9876
+
+logging:
+  level: DEBUG
+
+gamma.domain.member: member
+
+search:
+  host: 127.0.0.1
+  port: 8797
+  account:
+    indexName: accounts
+    indexType: account
+    mappingPath: account_mapping.json
+    fullDumpRange: 3
+    batchSize: 100
+
+password:
+  salt: $2a$16$vbMr@Ax/k*LTX&B%B-U^YUsMS.Pe
+  encryption: Sha256
+
