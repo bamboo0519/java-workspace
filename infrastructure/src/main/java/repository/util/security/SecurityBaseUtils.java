@@ -12,8 +12,6 @@ import java.util.*;
 
 /**
  * 安全工具基础类
- * @author JinKe chenw@dtdream.com
- *         2017/8/9 13:48
  */
 public class SecurityBaseUtils {
     private static final String KEY_SHA = "SHA";

@@ -14,8 +14,6 @@ import java.util.Map;
 
 /**
  * RSA签名验签类
- * @author JinKe chenw@dtdream.com
- *         2017/8/9 13:20
  */
 @Slf4j
 public class RSA extends SecurityBaseUtils{

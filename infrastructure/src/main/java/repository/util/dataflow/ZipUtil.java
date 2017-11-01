@@ -10,7 +10,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
- * Created by C0907 on 2017/8/17.
+ * Created by bamboo on 2017/8/17.
  */
 public class ZipUtil {
     private final static Charset CHARSET = Charset.forName("UTF-8");
