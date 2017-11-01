@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * Created by C0907 on 2017/9/8.
+ * Created by bamboo on 2017/9/8.
  */
 @Data
 public class EventForwarder implements Serializable{
