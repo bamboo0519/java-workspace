@@ -15,17 +15,22 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.dtdream.commons</groupId>
-            <artifactId>commons-boot-starter-mybatis</artifactId>
-            <version>1.2.26.RELEASE</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.10.RELEASE</version>
         </dependency>
-        <dependency>
-            <groupId>com.dtdream.commons</groupId>
-            <artifactId>commons-mybatis</artifactId>
-            <version>1.2.26.RELEASE</version>
-        </dependency>
-
     </dependencies>
 
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
