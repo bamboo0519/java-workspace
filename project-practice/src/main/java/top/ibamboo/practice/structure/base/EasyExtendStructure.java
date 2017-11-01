@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by C0907 on 2017/8/24.
+ * Created by bamboo on 2017/8/24.
  */
 @Service
 public class EasyExtendStructure{

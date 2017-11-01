@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 /**
- * Created by C0907 on 2017/8/23.
+ * Created by bamboo on 2017/8/23.
  *
  * 该case，需要在本地启动h2服务器
  */

@@ -4,7 +4,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * Created by C0907 on 2017/8/30.
+ * Created by bamboo on 2017/8/30.
  */
 public class AccountObserver2 implements Observer {
     public AccountObserver2(AccountManager sm) {

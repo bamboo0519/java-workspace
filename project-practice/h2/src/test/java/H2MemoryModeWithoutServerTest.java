@@ -11,7 +11,7 @@ import top.ibamboo.practice.h2.H2Application;
 import java.util.List;
 
 /**
- * Created by C0907 on 2017/8/29.
+ * Created by bamboo on 2017/8/29.
  *
  * 直接在内存中创建h2数据库，不需要H2服务器支持
  * 该测试使用到了resource:db/*; resource:mapper/*

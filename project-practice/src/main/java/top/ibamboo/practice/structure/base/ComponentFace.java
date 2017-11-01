@@ -1,7 +1,7 @@
 package top.ibamboo.practice.structure.base;
 
 /**
- * Created by C0907 on 2017/8/24.
+ * Created by bamboo on 2017/8/24.
  */
 public interface ComponentFace {
 

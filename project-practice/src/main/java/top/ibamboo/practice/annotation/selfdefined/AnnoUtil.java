@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * Created by C0907 on 2017/8/11.
+ * Created by bamboo on 2017/8/11.
  */
 @Data
 public class AnnoUtil implements Serializable{

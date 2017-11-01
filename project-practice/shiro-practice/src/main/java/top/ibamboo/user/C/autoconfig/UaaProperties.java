@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by C0907 on 2017/8/28.
+ * Created by bamboo on 2017/8/28.
  */
 @ConfigurationProperties(
         prefix = "uaa",

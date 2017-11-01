@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * Created by C0907 on 2017/8/15.
+ * Created by bamboo on 2017/8/15.
  */
 public abstract class JDKProxyFactory {
     //维护一个目标对象
@@ -25,10 +25,10 @@ public abstract class JDKProxyFactory {
             new InvocationHandler() {
                 @Override
                 public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                    proxyPreHandle(args);
+                    proxyPreHandle(method, args);
                     //执行目标对象方法
                     Object returnValue = method.invoke(target, args);
-                    proxyPostHandle(returnValue,args);
+                    proxyPostHandle(method,returnValue,args);
                     return returnValue;
                 }
             }

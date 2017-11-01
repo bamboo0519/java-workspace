@@ -3,7 +3,7 @@ package top.ibamboo.practice.design.patten.proxy.cglib;
 import org.junit.Test;
 
 /**
- * Created by C0907 on 2017/8/15.
+ * Created by bamboo on 2017/8/15.
  */
 public class Tester {
     @Test

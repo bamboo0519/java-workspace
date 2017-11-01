@@ -10,7 +10,7 @@ server:
   port: 8051
 
 mybatis:
-  type-aliases-package: top.ibamboo.account.model
+  type-aliases-package: top.ibamboo.account.model, top.ibamboo.practice.h2.classproperty
   driver-class-name: org.h2.Driver
   mapper-locations: classpath*:mapper/*Mapper.xml
   data-source-name: defaultUserDataSourceName

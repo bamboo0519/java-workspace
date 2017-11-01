@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="Account">
+    <resultMap id="AccountMap" type="Account">
+        <id column="id" property="id"/>
+        <result column="account_id" property="accountId"/>
+        <result column="account_name" property="accountName"/>
+        <result column="password" property="password"/>
+        <result column="mobile" property="mobile"/>
+        <result column="email" property="email"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+    </resultMap>
+
+    <sql id="tb" >
+        account
+    </sql>
+
+    <sql id="cols_all" >
+        id,account_id,account_name,password,mobile,email,created_at,updated_at
+    </sql>
+
+    <sql id="vals_all" >
+        id,accountId,accountName,password,mobile,email,createdAt,updatedAt
+    </sql>
+
+    <sql id="condition1" >
+        <if test="id != null">AND id = #{id}</if>
+        <if test="accountId != null">AND account_id = #{accountId}</if>
+        <if test="accountName != null">AND account_name = #{accountName}</if>
+        <if test="password != null">AND password = #{password}</if>
+        <if test="mobile != null">AND mobile = #{mobile}</if>
+        <if test="email != null">AND email = #{email}</if>
+        <if test="createdAt != null">AND created_at = #{createdAt}</if>
+        <if test="updatedAt != null">AND updated_at = #{updatedAt}</if>
+    </sql>
+
+    <update id="update" parameterType="Account">
+        UPDATE
+        <include refid="tb"/>
+        <set>
+            <if test="id != null">id = #{id},</if>
+            <if test="accountId != null">account_id = #{accountId},</if>
+            <if test="accountName != null">account_name = #{accountName},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="mobile != null">mobile = #{mobile},</if>
+            <if test="email != null">email = #{email},</if>
+            updated_at=now()
+        </set>
+        WHERE id=#{id}
+    </update>
+
+    <insert id="create" parameterType="Account">
+        INSERT INTO
+        <include refid="tb"/>
+        (<include refid="cols_all"/>)
+        VALUES
+        (<include refid="vals_all"/>)
+    </insert>
+
+</mapper>

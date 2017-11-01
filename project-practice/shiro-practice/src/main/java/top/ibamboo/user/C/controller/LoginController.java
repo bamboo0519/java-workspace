@@ -8,24 +8,22 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by C0907 on 2017/8/28.
+ * Created by bamboo on 2017/8/28.
  */
 @Controller
 @Slf4j
-@RequestMapping("")
 public class LoginController {
 
 //    @RequestMapping(value = "/userlogin", method = RequestMethod.POST/*, produces = MediaType.APPLICATION_JSON_UTF8_VALUE*/)
 //    @ResponseBody
 //    public String login(@RequestBody LoginParam loginParam, HttpServletRequest request, HttpServletResponse response) throws Exception {
     @RequestMapping(value = "/userlogin", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ResponseBody
+//    @ResponseBody
     public String login(HttpServletRequest request, HttpServletResponse response) throws Exception {
         log.info("login[]");
         String userName = request.getParameter("userName");
@@ -57,20 +55,13 @@ public class LoginController {
 
         log.info("login[]session1:{}, {}",subject.getSession(), subject.isAuthenticated());
 
-        return null;
-    }
-    @RequestMapping("/home")
-    public String home() throws Exception {
-
-//        throw new Exception("Sam 错误");
-        throw new RuntimeException();
-
+        return "home/index";
     }
 
-    @RequestMapping("/1")
-    public String loginTest() throws Exception {
-        return "login/login";
-    }
+//    @RequestMapping("/home")
+//    public String loginTest() throws Exception {
+//        return "home/index";
+//    }
 
 
 }

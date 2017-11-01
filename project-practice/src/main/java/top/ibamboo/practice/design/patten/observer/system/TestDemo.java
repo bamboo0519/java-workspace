@@ -3,7 +3,7 @@ package top.ibamboo.practice.design.patten.observer.system;
 import top.ibamboo.account.model.Account;
 
 /**
- * Created by C0907 on 2017/8/30.
+ * Created by bamboo on 2017/8/30.
  */
 public class TestDemo {
     public static void main(String[] args) {

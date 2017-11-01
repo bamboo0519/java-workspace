@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import java.util.Date;
 
 /**
- * Created by C0907 on 2017/8/18.
+ * Created by bamboo on 2017/8/18.
  */
 @EnableScheduling
 @SpringBootApplication()

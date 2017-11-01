@@ -12,7 +12,7 @@ import org.apache.shiro.subject.SimplePrincipalCollection;
 import top.ibamboo.account.model.Account;
 
 /**
- * Created by C0907 on 2017/8/29.
+ * Created by bamboo on 2017/8/29.
  */
 @Slf4j
 public class ShiroRealm extends AuthorizingRealm {

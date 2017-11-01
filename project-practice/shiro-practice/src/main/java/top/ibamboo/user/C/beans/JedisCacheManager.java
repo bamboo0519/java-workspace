@@ -6,7 +6,7 @@ import org.apache.shiro.cache.CacheException;
 import org.springframework.data.redis.core.RedisTemplate;
 
 /**
- * Created by C0907 on 2017/8/28.
+ * Created by bamboo on 2017/8/28.
  */
 public class JedisCacheManager extends AbstractCacheManager {
     RedisTemplate template;

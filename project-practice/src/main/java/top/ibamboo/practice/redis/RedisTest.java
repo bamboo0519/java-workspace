@@ -4,7 +4,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.exceptions.JedisConnectionException;
 
 /**
- * Created by C0907 on 2017/8/23.
+ * Created by bamboo on 2017/8/23.
  */
 public class RedisTest {
 

@@ -4,8 +4,10 @@ import org.junit.Test;
 import top.ibamboo.practice.design.patten.proxy.IUserDao;
 import top.ibamboo.practice.design.patten.proxy.UserDao;
 
+import java.lang.reflect.Method;
+
 /**
- * Created by C0907 on 2017/8/15.
+ * Created by bamboo on 2017/8/15.
  */
 public class Tester {
 
@@ -17,9 +19,24 @@ public class Tester {
         System.out.println(target.getClass());
 
         // 给目标对象，创建代理对象
-        IUserDao proxy = (IUserDao) new DefaultJDKProxyFactory(target).getProxyInstance();
+        IUserDao proxy = (IUserDao) new DefaultJDKProxyFactory(target) {
+            @Override
+            public Object proxyPreHandle(Object... args) {
+                if (((Method)args[0]).getName().equals("save")) {
+                    System.out.println("proxy for Save");
+                }
+                return null;
+            }
+
+            @Override
+            public Object proxyPostHandle(Object... args) {
+                return null;
+            }
+        }.getProxyInstance();
         // class $Proxy0   内存中动态生成的代理对象
         System.out.println(proxy.getClass());
+
+
 
         // 执行方法   【代理对象】
         proxy.save();

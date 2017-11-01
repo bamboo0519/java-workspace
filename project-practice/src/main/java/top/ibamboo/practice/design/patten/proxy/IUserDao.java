@@ -1,7 +1,7 @@
 package top.ibamboo.practice.design.patten.proxy;
 
 /**
- * Created by C0907 on 2017/8/15.
+ * Created by bamboo on 2017/8/15.
  */
 public interface IUserDao {
     void save();

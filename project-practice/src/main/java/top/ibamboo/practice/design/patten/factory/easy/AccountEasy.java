@@ -3,7 +3,7 @@ package top.ibamboo.practice.design.patten.factory.easy;
 import lombok.Data;
 
 /**
- * Created by C0907 on 2017/8/21.
+ * Created by bamboo on 2017/8/21.
  */
 @Data
 public class AccountEasy {

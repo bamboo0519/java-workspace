@@ -7,7 +7,7 @@ import top.ibamboo.account.model.Account;
 import java.util.Observable;
 
 /**
- * Created by C0907 on 2017/8/30.
+ * Created by bamboo on 2017/8/30.
  */
 @Slf4j
 public class AccountManager extends Observable {

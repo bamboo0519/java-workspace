@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by C0907 on 2017/8/21.
+ * Created by bamboo on 2017/8/21.
  */
 @Slf4j
 @Component
